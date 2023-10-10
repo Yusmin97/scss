@@ -1,16 +1,15 @@
 const pokemon = require('pokemon');
 
 const pokemonT = pokemon.all('ko');
-// const pokeArray = [];
+let pokeArray = '';
 
-// for (let i = 0; i < pokemonT.length; i++) {
-//   pokeArray[i] = pokemonT[i];
-// }
-// console.log(pokeArray[i]);
-
-const pokeJOin = pokemonT.join();
-
-console.log(pokeJOin);
+for (let i = 0; i < pokemonT.length; i++) {
+  let pokeName = `<li>${pokemonT[i]}</li>`;
+  pokeArray += pokeName;
+}
+// console.log(pokeArray);
+// const pokeJOin = pokemonT.join();
+// console.log(pokeJOin);
 
 const fs = require('fs');
 
@@ -26,7 +25,9 @@ fs.writeFileSync(
   </head>
   <body>
     <div#root>
-      <li>${pokeJOin}</li>
+      <ul>
+        ${pokeArray}
+      </ul>
     </div>
   </body>
 </html>`
